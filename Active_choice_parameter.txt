@@ -1,0 +1,25 @@
+Active_Choice_Parameters
+
+
+Manage Jenkins---Manage Plugins----Click on Available---Choose Active_Choice_Parameters and select Active_Choice_Parameters Plugin and Install 
+
+
+1) Creating a target with pipeline
+	* Click on New Item and add name as Active_Choice and select pipeline and then click Ok.
+	* Now Give description about the target.Select "This project is Parametrized" and add parameter Active_Choice_Parameter
+	* Give name to the choice parameter and add a groovy script like:
+	return [
+	"",
+	"Andhra Pradesh",
+	"Telangana",
+	"Orissa",
+	"Karnataka"
+	]
+	* Add fallback script like: return ["error"]
+	* Provide the description about the target
+	* Select choice type like : Single select ,Multi select , check boxes , radio buttons 
+	* We can choose enable filter 
+	* Click apply and then save 
+	* Active_Choice_Parameter target is created.
+	* Click on Build Now  and Observe the Output.
+	
