@@ -1,0 +1,16 @@
+pipeline {
+    agent any
+    
+    stages {
+        stage('Download') {
+            steps {
+                sh 'echo "artifact file" > generatedFile2.txt'
+            }
+        }
+    }
+    post {
+        always {
+            archiveArtifacts artifacts: 'generatedFile2.txt', onlyIfSuccessful: true
+        }
+    }
+}
